@@ -6,6 +6,9 @@ gem 'rails', '4.0.2'
 # Use PostgreSQL as the database for Active Record
 gem 'pg'
 
+# Use will_paginate to divide elements into separate pages
+gem 'will_paginate'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

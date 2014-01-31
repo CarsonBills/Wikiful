@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 	def index
-		@articles = Article.paginate(:page => params[:page], :per_page => 25)
+		@articles = Article.paginate(:page => params[:page], :per_page => 10)
 	end
 
 	def show
@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
 	end
 
 	def new
+		@article = Article.new
 	end
 
 	def create
@@ -19,7 +20,7 @@ class ArticlesController < ApplicationController
 		end
 	end
 	private
-	def article_params
-		params.require(:article).permit(:title, :content, :category_ids => [])
-	end
+		def article_params
+			params.require(:article).permit(:title, :content, :category_ids => [])
+		end
 end

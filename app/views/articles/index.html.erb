@@ -1,6 +1,7 @@
 <h1> This is the index view for Articles</h1>
+<%= will_paginate @articles %>
 <% @articles.each do |article| %>
-<%= will_paginate @posts %>
+
 	<div>
 		<h3><%= link_to article.title, article %></h3>
 			<p>Published on <%= article.created_at.strftime('%b %d, %Y') %></p>
@@ -10,4 +11,6 @@
 		</p>
 		<p><%= truncate(article.content, length: 200) %></p>
 	</div>
+
 <% end %>
+	<%= will_paginate @articles %>
