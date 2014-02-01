@@ -1,0 +1,8 @@
+<div>
+	<h1><%= @category.name %> </h1>
+		<p>Articles filed under this category:<% @category.articles.each do |article| %></p>
+			<%=link_to article.title, article_path(article) %>
+		<p> Published on <%=article.created_at.strftime('%b %d, %Y') %></p>	
+		<%end%>
+</div>
+	
