@@ -1,2 +1,7 @@
-<h1>Welcome to Wikiful</h1>
-<p>This is a placeholder for our landing page. Eventually we'll put something cooler here!</p>
+<h1>Welcome to Wikiful!</h1>
+<h4>Here are some of our most recent articles; let's hope you can read Latin!</h4>
+	<% @recent_articles.each do |article| %>
+		<div>
+			<%= link_to article.title, article_path(article)%>
+		</div>
+<%end%>
