@@ -1,4 +1,8 @@
 Wikiful::Application.routes.draw do
+  get 'signup', to: 'users#new', as: 'signup'
+  get 'login', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+  resources :sessions
   resources :users
 
   get "welcome/index"
@@ -20,6 +24,7 @@ Wikiful::Application.routes.draw do
   #   resources :products
   resources :categories
   resources :users
+  
 
   # Example resource route with options:
   #   resources :products do

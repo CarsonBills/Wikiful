@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+	before_filter :authorize, only: [:new]
 	def index
 		@articles = Article.paginate(:page => params[:page], :per_page => 10)
 	end
